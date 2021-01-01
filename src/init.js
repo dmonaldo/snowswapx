@@ -100,7 +100,7 @@ let wallets = [
   },
   {
     walletName: "walletConnect",
-    infuraKey: "c334bb4b45a444979057f0fb8a0c9d1b",
+    infuraKey: "0154f757288544aeb6d8bfa82467c27c",
   },
   {
     walletName: "walletLink",
