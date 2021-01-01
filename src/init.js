@@ -20,7 +20,7 @@ import { multicall_address, multicall_abi } from "./allabis";
     walletconnect: {
         package: WalletConnectProvider, // required
         options: {
-          infuraId: "c334bb4b45a444979057f0fb8a0c9d1b" // required
+          infuraId: "0154f757288544aeb6d8bfa82467c27c" // required
         }
     },
     authereum: {
@@ -79,11 +79,11 @@ let wallets = [
     walletName: "trezor",
     appUrl: "https://snowswap.org",
     email: "info@snowswap.org",
-    rpcUrl: "https://mainnet.infura.io/v3/c334bb4b45a444979057f0fb8a0c9d1b",
+    rpcUrl: "https://mainnet.infura.io/v3/0154f757288544aeb6d8bfa82467c27c",
   },
   {
     walletName: "ledger",
-    rpcUrl: "https://mainnet.infura.io/v3/c334bb4b45a444979057f0fb8a0c9d1b",
+    rpcUrl: "https://mainnet.infura.io/v3/0154f757288544aeb6d8bfa82467c27c",
     //LedgerTransport: TransportU2F,
   },
   { walletName: "dapper" },
@@ -96,17 +96,17 @@ let wallets = [
   },
   {
     walletName: "trust",
-    rpcUrl: "https://mainnet.infura.io/v3/c334bb4b45a444979057f0fb8a0c9d1b",
+    rpcUrl: "https://mainnet.infura.io/v3/0154f757288544aeb6d8bfa82467c27c",
   },
   {
     walletName: "walletConnect",
-    infuraKey: "c334bb4b45a444979057f0fb8a0c9d1b",
+    infuraKey: "0154f757288544aeb6d8bfa82467c27c",
   },
   {
     walletName: "walletLink",
     appName: "SnowSwap",
     appLogoUrl: "https://www.snowswap.org/logo_snowball.svg",
-    rpcUrl: "https://mainnet.infura.io/v3/c334bb4b45a444979057f0fb8a0c9d1b",
+    rpcUrl: "https://mainnet.infura.io/v3/0154f757288544aeb6d8bfa82467c27c",
   },
   {
     walletName: "portis",
@@ -119,16 +119,16 @@ let wallets = [
   { walletName: "unilogin" },
   {
     walletName: "imToken",
-    rpcUrl: "https://mainnet.infura.io/v3/c334bb4b45a444979057f0fb8a0c9d1b",
+    rpcUrl: "https://mainnet.infura.io/v3/0154f757288544aeb6d8bfa82467c27c",
   },
   { walletName: "meetone" },
   {
     walletName: "mykey",
-    rpcUrl: "https://mainnet.infura.io/v3/c334bb4b45a444979057f0fb8a0c9d1b",
+    rpcUrl: "https://mainnet.infura.io/v3/0154f757288544aeb6d8bfa82467c27c",
   },
   {
     walletName: "huobiwallet",
-    rpcUrl: "https://mainnet.infura.io/v3/c334bb4b45a444979057f0fb8a0c9d1b",
+    rpcUrl: "https://mainnet.infura.io/v3/0154f757288544aeb6d8bfa82467c27c",
   },
 ];
 
