@@ -280,7 +280,10 @@
           "
           @click="
             justDeposit = true;
-            handle_add_liquidity();
+            if (depositc)
+              handle_add_liquidity();
+            else
+              toggleConfirmationModal();
           "
         >
           Deposit
@@ -392,6 +395,12 @@
         </p>
       </div>
     </div>
+    <ConfirmationModal
+      message="Depositing unwrapped is known to be problematic and has a high probability of failing."
+      buttonText="Continue with Deposit"
+      @onConfirmAction="confirmUnwrappedDeposit"
+      v-if="showConfirmationModal"
+      @close="toggleConfirmationModal" />
   </div>
 </template>
 
@@ -417,15 +426,18 @@ import BN from "bignumber.js";
 
 import Slippage from "../common/Slippage.vue";
 
+import ConfirmationModal from "@/components/common/ConfirmationModal";
+
 export default {
   components: {
     Slippage,
     GasPrice,
+    ConfirmationModal,
   },
   data: () => ({
     disabled: false,
     disabledButtons: true,
-    disabledForLaunch: true,
+    disabledForLaunch: false,
     sync_balances: false,
     max_balances: true,
     inf_approval: true,
@@ -460,8 +472,8 @@ export default {
     loadingAction: false,
     errorStaking: false,
     slippagePromise: helpers.makeCancelable(Promise.resolve()),
-
     hasRewards: true,
+    showConfirmationModal: false,
   }),
   async created() {
     this.$watch(
@@ -911,6 +923,13 @@ export default {
           .find((deposit_zap) => deposit_zap == event.address.toLowerCase()) !==
           undefined
       );
+    },
+    toggleConfirmationModal: function () {
+      this.showConfirmationModal = !this.showConfirmationModal;
+    },
+    confirmUnwrappedDeposit: function() {
+      this.handle_add_liquidity();
+      this.toggleConfirmationModal();
     },
     async handle_add_liquidity(stake = false) {
       let actionType = stake == false ? 1 : 2;
